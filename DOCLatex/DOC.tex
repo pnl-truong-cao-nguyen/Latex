@@ -1,4 +1,5 @@
 \documentclass{article}
+\usepackage{graphicx}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %SET PAGE
@@ -47,11 +48,69 @@ rmargin=15mm,
 \renewcommand{\footrulewidth}{0.4pt}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%PAGE BORDERS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %BODY
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-\section{hello}
-xin chào mọi người
+\begin{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TITLE PAGE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tikzpicture}
+[remember picture, overlay]
+\draw[line width=3pt]
+($ (current page.north west) + (30mm, -20mm) $)
+rectangle
+($ (current page.south east) + (-15mm, 20mm) $);
+\draw[line width=0.5pt]
+($ (current page.north west) + (31mm, -21mm) $)
+rectangle
+($ (current page.south east) + (-16mm, 21mm) $);
+\end{tikzpicture}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TEXT TITLE PAGE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+\vspace{-10pt} \textbf{\fontsize{16pt}{0pt}\selectfont \uppercase{đại học đà nẵng\\
+trường đại học bách khoa\\
+\underline{khoa điện}}}
+\end{center}
+\end{titlepage}
+\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TEXT BODY
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{\uppercase{lời nói đầu}}
+
+\pagebreak
+\thispagestyle{empty}
+\renewcommand{\contentsname}{\uppercase{mục lục}}
+\tableofcontents
+
+\pagebreak
+\thispagestyle{empty}
+\renewcommand{\listfigurename}{\uppercase{danh mục hình ảnh}}
+\listoffigures
+
+\pagebreak
+\thispagestyle{empty}
+\renewcommand{\listtablename}{\uppercase{danh mục bảng biểu}}
+\listoftables
+
+\pagebreak
+\setcounter{page}{1}
+\section{hello1}
+dsfháldkùh khá dflkjh kljádh fsd fkáhd f
+\section{hello2}
+
+\pagebreak
+dsfháldkùh khá dflkjh kljádh fsd fkáhd f
 
 \end{document}
